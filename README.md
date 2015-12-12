@@ -4,7 +4,9 @@
 - Facebook data taken from https://govtrequests.facebook.com/country/United%20States/2015-H1/
 
 ## Defining the data
-- Total number of requests received is reflective of total number of requests for data about or from the account of a user of Apple, Twitter or Facebook
+- Total number of requests received is reflective of
+  - total number of requests for data about or from the account of a user of Apple, Twitter or Facebook
+  - requests are all from US government
 - Data related to device requests are not shown as that would only apply to Apple
 - Data shown only goes back to late 2013 because in early 2013 Apple grouped together requests in bands of 1000, making the data too vague to be of use here
 - Google transparency report data was not used in this experiment because as of 12/12/15 there was no report released for early 2015
