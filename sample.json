@@ -1,0 +1,42 @@
+{
+  "apple": {
+    "requests": {
+      "early-2015":971,
+      "late-2014":788,
+      "early-2014":789,
+      "late-2013":638
+    },
+    "compliances": {
+      "early-2015":790,
+      "late-2014":633,
+      "early-2014":604,
+      "late-2013":456
+    },
+    "compliant-percentages": {
+      "early-2015":81.3594,
+      "late-2014":80.3299,
+      "early-2014":76.5525,
+      "late-2013":71.4733
+    }
+  },
+  "twitter": {
+    "requests": {
+      "early-2015":2436,
+      "late-2014":1622,
+      "early-2014":1257,
+      "late-2013":833
+    },
+    "compliances": {
+      "early-2015":1948.8,
+      "late-2014":1297.6,
+      "early-2014":905.4,
+      "late-2013":574.77
+    },
+    "compliant-percentages": {
+      "early-2015":80,
+      "late-2014":80,
+      "early-2014":72,
+      "late-2013":69
+    }
+  }
+}
