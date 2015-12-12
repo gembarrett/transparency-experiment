@@ -9,7 +9,7 @@
 - Data shown only goes back to late 2013 because in early 2013 Apple grouped together requests in bands of 1000, making the data too vague to be of use here
 - Google transparency report data was not used in this experiment because as of 12/12/15 there was no report released for early 2015
 - Number of times company complied with requests is shown in number and percentage format because, although Apple provide actual number, both Twitter and Facebook only provide percentage. Number of decimal points for each company therefore varies:
-  - Apple: whole numbers only
+  - Apple: whole numbers provided, percentages calculated to 4 DP
   - Twitter: whole percentages provided, calculated number to 1 or 2 DP
   - Facebook: percentages with 2 DP provided, calculated number to 4 DP
 - Percentages provided, particularly in the Twitter report, may have been rounded up or down for readability
