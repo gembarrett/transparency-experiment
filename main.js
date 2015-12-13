@@ -28,6 +28,9 @@ function getQuestions() {
     twitterQ[i] = twitter["data"][0]["questions"][i];
     facebookQ[i] = facebook["data"][0]["questions"][i];
   }
+  appleQ.reverse();
+  twitterQ.reverse();
+  facebookQ.reverse();
 }
 
 function getAnswers() {
@@ -40,6 +43,9 @@ function getAnswers() {
     twitterA[i] = twitter["data"][0]["answers"][0][type][i];
     facebookA[i] = facebook["data"][0]["answers"][0][type][i];
   }
+  appleA.reverse();
+  twitterA.reverse();
+  facebookA.reverse();
 }
 
 function visualiseIt(thisData) {
