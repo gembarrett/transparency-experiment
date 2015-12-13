@@ -1,102 +1,112 @@
 {
-  "apple": [
+  "timeframes": [
+    "early-2015",
+    "late-2014",
+    "early-2014",
+    "late-2013"
+  ],
+  "companies": [
     {
-      "services": [
-        "iTunes",
-        "iCloud"
-      ],
-      "data": [
+      "apple": [
         {
-          "questions": [
-            971,
-            788,
-            789,
-            638
+          "services": [
+            "iTunes",
+            "iCloud"
           ],
-          "answers": [
+          "data": [
             {
-              "numbers": [
-                790,
-                633,
-                604,
-                456
+              "questions": [
+                971,
+                788,
+                789,
+                638
               ],
-              "percentages": [
-                81.3594,
-                80.3299,
-                76.5525,
-                71.4733
+              "answers": [
+                {
+                  "numbers": [
+                    790,
+                    633,
+                    604,
+                    456
+                  ],
+                  "percentages": [
+                    81.3594,
+                    80.3299,
+                    76.5525,
+                    71.4733
+                  ]
+                }
               ]
             }
           ]
         }
-      ]
-    }
-  ],
-  "twitter": [
-    {
-      "services": [
-        "Twitter",
-        "Periscope",
-        "Vine"
       ],
-      "data": [
+      "twitter": [
         {
-          "questions": [
-            2436,
-            1622,
-            1257,
-            833
+          "services": [
+            "Twitter",
+            "Periscope",
+            "Vine"
           ],
-          "answers": [
+          "data": [
             {
-              "numbers": [
-                1948.8,
-                1297.6,
-                905.4,
-                574.77
+              "questions": [
+                2436,
+                1622,
+                1257,
+                833
               ],
-              "percentages": [
-                80,
-                80,
-                72,
-                69
+              "answers": [
+                {
+                  "numbers": [
+                    1948.8,
+                    1297.6,
+                    905.4,
+                    574.77
+                  ],
+                  "percentages": [
+                    80,
+                    80,
+                    72,
+                    69
+                  ]
+                }
               ]
             }
           ]
         }
-      ]
-    }
-  ],
-  "facebook": [
-    {
-      "services": [
-        "Facebook",
-        "Messenger",
-        "Whatsapp",
-        "Instagram"
       ],
-      "data": [
+      "facebook": [
         {
-          "questions": [
-            17577,
-            14274,
-            15433,
-            12598
+          "services": [
+            "Facebook",
+            "Messenger",
+            "Whatsapp",
+            "Instagram"
           ],
-          "answers": [
+          "data": [
             {
-              "numbers": [
-                14035.2345,
-                11296.4436,
-                12369.5495,
-                10206.8996
+              "questions": [
+                17577,
+                14274,
+                15433,
+                12598
               ],
-              "percentages": [
-                79.85,
-                79.14,
-                80.15,
-                81.02
+              "answers": [
+                {
+                  "numbers": [
+                    14035.2345,
+                    11296.4436,
+                    12369.5495,
+                    10206.8996
+                  ],
+                  "percentages": [
+                    79.85,
+                    79.14,
+                    80.15,
+                    81.02
+                  ]
+                }
               ]
             }
           ]
