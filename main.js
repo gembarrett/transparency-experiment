@@ -19,8 +19,8 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   getQuestions();
   getAnswers();
   visualiseIt(appleQ);
-  visualiseIt(facebookQ);
-  visualiseIt(twitterQ);
+  // visualiseIt(facebookQ);
+  // visualiseIt(twitterQ);
 });
 
 function getQuestions() {
@@ -50,7 +50,7 @@ function getAnswers() {
 }
 
 function visualiseIt(thisData) {
-  var w = 400, // size of chart
+  var w = 500, // size of chart
       h = 200,
       margin = 20, // room for labels
       y = d3.scale // converts data values to x and y on screen
@@ -68,7 +68,7 @@ function visualiseIt(thisData) {
                       .attr("height", h);
 
   var g = visualisation.append("svg:g")
-          .attr("transform", "translate(0,200)");
+          .attr("transform", "translate(100,200)");
 
   var line = d3.svg.line()
               .x(function(d,i) { return x(i); })
@@ -91,15 +91,45 @@ function visualiseIt(thisData) {
     .attr("y2", -1 * y(d3.max(thisData)));
 
   // axes labels
-  g.selectAll(".xLabel")
+  g.selectAll(".Xlabel")
     .data(x.ticks(thisData.length))
     .enter()
     .append("svg:text")
-    .attr("class", "xLabel")
+    .attr("class", "Xlabel")
     .text(function(i) { return timeframes[i]; })
     .attr("x", function(d) { return x(d) })
     .attr("y", 0)
     .attr("text-anchor", "middle");
+  g.selectAll(".Ylabel")
+    .data(y.ticks(thisData.length))
+    .enter()
+    .append("svg:text")
+    .attr("class", "Ylabel")
+    .text(String)
+    .attr("x", 0)
+    .attr("y", function(d) { return -1 * y (d) })
+    .attr("text-anchor", "end")
+    .attr("dy", 4); // vertically position labels
 
 
+  // axes ticks
+  g.selectAll(".Xticks")
+    .data(x.ticks(thisData.length))
+    .enter()
+    .append("svg:line")
+    .attr("class", "Xticks")
+    .attr("x1", function(d) { return x(d); })
+    .attr("y1", -1 * y(0))
+    .attr("x2", function(d) { return x(d); })
+    .attr("y2", -1 * y(-0.3));
+
+  g.selectAll(".Yticks")
+    .data(y.ticks(thisData.length))
+    .enter()
+    .append("svg:line")
+    .attr("class", "Yticks")
+    .attr("y1", function(d) { return -1 * y(d); })
+    .attr("x1", x(-0.3))
+    .attr("y2", function(d) { return -1 * y(d); })
+    .attr("x2", x(0));
 }
