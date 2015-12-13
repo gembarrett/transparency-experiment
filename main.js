@@ -18,7 +18,7 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   twitter = data["companies"][0]["twitter"][0];
   getQuestions();
   getAnswers();
-  visualiseIt(appleQ);
+  visualiseIt();
   // visualiseIt(facebookQ);
   // visualiseIt(twitterQ);
 });
@@ -49,87 +49,43 @@ function getAnswers() {
   facebookA.reverse();
 }
 
-function visualiseIt(thisData) {
-  var w = 500, // size of chart
-      h = 200,
-      margin = 20, // room for labels
-      y = d3.scale // converts data values to x and y on screen
-          .linear()
-          .domain([0, d3.max(thisData)])
-          .range([0 + margin, h - margin]),
-      x = d3.scale
-          .linear()
-          .domain([0, thisData.length])
-          .range([0 + margin, w - margin]);
+function visualiseIt() {
+  var appleSvg = d3.select("body")
+            .append("svg")
+            .attr("height", 120)
+            .attr("width", 720);
 
-  var visualisation = d3.select("body")
-                      .append("svg:svg")
-                      .attr("width", w)
-                      .attr("height", h);
+  var appleCircles = appleSvg.selectAll("circle")
+                .data(appleQ)
+                .enter()
+                .append("circle")
+                .attr("cy", 60)
+                .attr("cx", function(d,i) { return i * 100 + 30; })
+                .attr("r", function(d) { return d/500; });
 
-  var g = visualisation.append("svg:g")
-          .attr("transform", "translate(100,200)");
+  var twitterSvg = d3.select("body")
+            .append("svg")
+            .attr("height", 120)
+            .attr("width", 720);
 
-  var line = d3.svg.line()
-              .x(function(d,i) { return x(i); })
-              // -1 used to counter the y-axis default orientation
-              .y(function(d) { return -1 * y(d); })
+  var twitterCircles = twitterSvg.selectAll("circle")
+                .data(twitterQ)
+                .enter()
+                .append("circle")
+                .attr("cy", 60)
+                .attr("cx", function(d,i) { return i * 100 + 30; })
+                .attr("r", function(d) { return d/500; });
 
-  // add path for line
-  g.append("svg:path").attr("d", line(thisData));
+  var facebookSvg = d3.select("body")
+            .append("svg")
+            .attr("height", 120)
+            .attr("width", 720);
 
-  // add axes
-  g.append("svg:line")
-    .attr("x1", x(0))
-    .attr("y1", -1 * y(0))
-    .attr("x2", x(w))
-    .attr("y2", -1 * y(0));
-  g.append("svg:line")
-    .attr("x1", x(0))
-    .attr("y1", -1 * y(0))
-    .attr("x2", x(0))
-    .attr("y2", -1 * y(d3.max(thisData)));
-
-  // axes labels
-  g.selectAll(".Xlabel")
-    .data(x.ticks(thisData.length))
-    .enter()
-    .append("svg:text")
-    .attr("class", "Xlabel")
-    .text(function(i) { return timeframes[i]; })
-    .attr("x", function(d) { return x(d) })
-    .attr("y", 0)
-    .attr("text-anchor", "middle");
-  g.selectAll(".Ylabel")
-    .data(y.ticks(thisData.length))
-    .enter()
-    .append("svg:text")
-    .attr("class", "Ylabel")
-    .text(String)
-    .attr("x", 0)
-    .attr("y", function(d) { return -1 * y (d) })
-    .attr("text-anchor", "end")
-    .attr("dy", 4); // vertically position labels
-
-
-  // axes ticks
-  g.selectAll(".Xticks")
-    .data(x.ticks(thisData.length))
-    .enter()
-    .append("svg:line")
-    .attr("class", "Xticks")
-    .attr("x1", function(d) { return x(d); })
-    .attr("y1", -1 * y(0))
-    .attr("x2", function(d) { return x(d); })
-    .attr("y2", -1 * y(-0.3));
-
-  g.selectAll(".Yticks")
-    .data(y.ticks(thisData.length))
-    .enter()
-    .append("svg:line")
-    .attr("class", "Yticks")
-    .attr("y1", function(d) { return -1 * y(d); })
-    .attr("x1", x(-0.3))
-    .attr("y2", function(d) { return -1 * y(d); })
-    .attr("x2", x(0));
+  var facebookCircles = facebookSvg.selectAll("circle")
+                .data(facebookQ)
+                .enter()
+                .append("circle")
+                .attr("cy", 60)
+                .attr("cx", function(d,i) { return i * 100 + 30; })
+                .attr("r", function(d) { return d/500; });
 }
