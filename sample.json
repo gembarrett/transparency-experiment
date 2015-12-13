@@ -38,5 +38,88 @@
         }
       ]
     }
+  ],
+  "twitter": [
+    {
+      "services": [
+        "Twitter",
+        "Periscope",
+        "Vine"
+      ],
+      "data": [
+        {
+          "questions": [
+            {
+              "early-2015":2436,
+              "late-2014":1622,
+              "early-2014":1257,
+              "late-2013":833
+            }
+          ],
+          "answers": [
+            {
+              "numbers": [
+                {
+                  "early-2015":1948.8,
+                  "late-2014":1297.6,
+                  "early-2014":905.4,
+                  "late-2013":574.77
+                }
+              ],
+              "percentages": [
+                {
+                  "early-2015":80,
+                  "late-2014":80,
+                  "early-2014":72,
+                  "late-2013":69
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "facebook": [
+    {
+      "services": [
+        "Facebook",
+        "Messenger",
+        "Whatsapp",
+        "Instagram"
+      ],
+      "data": [
+        {
+          "questions": [
+            {
+              "early-2015":17577,
+              "late-2014":14274,
+              "early-2014":15433,
+              "late-2013":12598
+            }
+          ],
+          "answers": [
+            {
+              "numbers": [
+                {
+                  "early-2015":14035.2345,
+                  "late-2014":11296.4436,
+                  "early-2014":12369.5495,
+                  "late-2013":10206.8996
+                }
+              ],
+              "percentages": [
+                {
+                  "early-2015":79.85,
+                  "late-2014":79.14,
+                  "early-2014":80.15,
+                  "late-2013":81.02
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
   ]
 }
