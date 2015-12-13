@@ -12,6 +12,7 @@ var percentagesOn = false; // when true, replace all compliance totals with perc
 
 d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/master/sample.json", function(data) {
   timeframes = data["timeframes"];
+  timeframes.reverse();
   apple = data["companies"][0]["apple"][0];
   facebook = data["companies"][0]["facebook"][0];
   twitter = data["companies"][0]["twitter"][0];
