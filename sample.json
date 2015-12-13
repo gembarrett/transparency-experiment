@@ -1,5 +1,9 @@
 {
   "apple": {
+    "services": [
+      "iTunes",
+      "iCloud"
+    ],
     "requests": {
       "early-2015":971,
       "late-2014":788,
@@ -20,6 +24,11 @@
     }
   },
   "twitter": {
+    "services": [
+      "Twitter",
+      "Periscope",
+      "Vine"
+    ],
     "requests": {
       "early-2015":2436,
       "late-2014":1622,
@@ -40,6 +49,12 @@
     }
   },
   "facebook": {
+    "services": [
+      "Facebook",
+      "Messenger",
+      "Whatsapp",
+      "Instagram"
+    ],
     "requests": {
       "early-2015":17577,
       "late-2014":14274,
