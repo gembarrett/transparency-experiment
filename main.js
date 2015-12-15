@@ -60,23 +60,21 @@ function makeDataset() {
   dataset = [
     [
       { x: 0, y: appleQ[0] },
-      { x: 1, y: twitterQ[0] },
-      { x: 2, y: facebookQ[0] }
+      { x: 1, y: appleQ[1] },
+      { x: 2, y: appleQ[2] },
+      { x: 3, y: appleQ[3] }
     ],
     [
-      { x: 0, y: appleQ[1] },
+      { x: 0, y: twitterQ[0] },
       { x: 1, y: twitterQ[1] },
-      { x: 2, y: facebookQ[1] }
+      { x: 2, y: twitterQ[2] },
+      { x: 3, y: twitterQ[3] }
     ],
     [
-      { x: 0, y: appleQ[2] },
-      { x: 1, y: twitterQ[2] },
-      { x: 2, y: facebookQ[2] }
-    ],
-    [
-      { x: 0, y: appleQ[3] },
-      { x: 1, y: twitterQ[3] },
-      { x: 2, y: facebookQ[3] }
+      { x: 0, y: facebookQ[0] },
+      { x: 1, y: facebookQ[1] },
+      { x: 2, y: facebookQ[2] },
+      { x: 3, y: facebookQ[3] }
     ]
   ];
 
@@ -102,7 +100,7 @@ function makeDataset() {
               .range([0, h]);
 
   // set colours for scale
-  var colors = d3.scale.category10();
+  var colors = d3.scale.ordinal().range(['darkgrey', 'deepskyblue', 'royalblue']);
 
   // create svg to attach to
   var svg = d3.select('body')
@@ -134,58 +132,3 @@ function makeDataset() {
               })
               .attr('width', xScale.rangeBand());
 }
-
-// function visualiseIt() {
-//
-//   var tempFull = appleQ.concat(twitterQ).concat(facebookQ);
-//   var fullWidth = window.innerWidth;
-//
-//   var width = fullWidth - 100,
-//       barHeight = 20;
-//
-//   var x = d3.scale.linear()
-//           .range([0, width]);
-//
-//   var chart = d3.select(".chart")
-//               .attr("width", width);
-//
-//   x.domain([0, d3.max(tempFull,function(d) { return d })]);
-//
-//   chart.attr("height", barHeight * appleQ.length);
-//
-//   var appleBar = chart.selectAll("g")
-//             .data(appleQ)
-//             .enter()
-//             .append("g")
-//             .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-//
-//   appleBar.append("rect")
-//       .attr("width", function(d) { return x (d); })
-//       .attr("height", barHeight - 1)
-//       .style("fill", "lightblue");
-//
-//   appleBar.append("text")
-//       .attr("x", function(d) { return x(d) - 50; })
-//       .attr("y", barHeight/2)
-//       .attr("dy", ".35em")
-//       .text(function(d) { return d; });
-//
-//   var twitterBar = chart.selectAll("g")
-//             .data(twitterQ)
-//             .enter()
-//             .append("g")
-//             .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-//
-//   twitterBar.append("rect")
-//       .attr("width", function(d) { return x(d); })
-//       .attr("height", barHeight - 1)
-//       .style("fill", "lightgreen");
-//
-//   twitterBar.append("text")
-//       .attr("x", function(d) { return x(d) - 10; })
-//       .attr("y", barHeight/2)
-//       .attr("dy", ".35em")
-//       .text(function(d) { return d; });
-//
-// }
-
