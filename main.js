@@ -136,8 +136,8 @@ function makeHorizontalChart() {
 function makeDataset() {
 
   // set width and height
-  var w = 1500;
-  var h = 1300;
+  var w = 500;
+  var h = 500;
 
   dataset = [
     [
