@@ -51,93 +51,16 @@ function getAnswers() {
   facebookA.reverse();
 }
 
-function makeHorizontalChart() {
-  var margins = {
-    top: 12,
-    left: 48,
-    right: 24,
-    bottom: 24
-  },
-  legendPanel = {
-    width: 180
-  },
-  width = 500 - margins.left - margins.right - legendPanel.width,
-  height = 100 - margins.top - margins.bottom,
-  dataset = [{
-    data: [{
-      period: 'early 2015',
-      count: appleQ[0]
-    }, {
-      period: 'late 2014',
-      count: appleQ[1]
-    }, {
-      period: 'early 2014',
-      count: appleQ[2]
-    }, {
-      period: 'late 2013',
-      count: appleQ[3]
-    }],
-    name: 'Apple'
-  }, {
-    data: [{
-      period: 'early 2015',
-      count: twitterQ[0]
-    }, {
-      period: 'late 2014',
-      count: twitterQ[1]
-    }, {
-      period: 'early 2014',
-      count: twitterQ[2]
-    }, {
-      period: 'late 2013',
-      count: twitterQ[3]
-    }],
-    name: 'Twitter'
-  }, {
-    data: [{
-      period: 'early 2015',
-      count: facebookQ[0]
-    }, {
-      period: 'late 2014',
-      count: facebookQ[1]
-    }, {
-      period: 'early 2014',
-      count: facebookQ[2]
-    }, {
-      period: 'late 2013',
-      count: facebookQ[3]
-    }],
-    name: 'Facebook'
-  }
-  ],
-  series = dataset.map(function(d) {
-    return d.name;
-  }),
-  dataset = dataset.map(function(d) {
-    return d.data.map(function(o,i) {
-      return {
-        y: o.count,
-        x: o.month
-      };
-    });
-  }),
-  stack = d3.layout.stack();
-  stack(dataset);
-  var dataset = dataset.map(function(group) {
-    return group.map(function(d) {
-      return {
-        x: d.y,
-        y
-      }
-    })
-  })
-}
 
-function makeDataset() {
+function makeDataset(company1, company2, company3) {
 
   // set width and height
   var w = 500;
-  var h = 500;
+  var h = 400;
+
+  for (var i=0; i< 0;) {
+
+  }
 
   dataset = [
     [
@@ -169,7 +92,7 @@ function makeDataset() {
   // scales need to be set up
   var xScale = d3.scale.ordinal()
               .domain(d3.range(dataset[0].length))
-              .rangeRoundBands([0, w], 0.05);
+              .rangeRoundBands([0, h], 0.05);
 
   var yScale = d3.scale.linear()
                 .domain([0,
