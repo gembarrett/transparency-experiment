@@ -9,12 +9,8 @@ var twitterA = [];
 var facebookQ = [];
 var facebookA = [];
 var percentagesOn = false; // when true, replace all compliance totals with percentage data
-var e15 = [];
-var l14 = [];
-var e14 = [];
-var l13 = [];
-var dataset = [];
-var testDataset = [];
+var complianceButton = document.getElementById('compliances');
+var requestButton = document.getElementById('requests');
 
 d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/master/sample.json", function(data) {
   timeframes = data["timeframes"];
@@ -27,7 +23,6 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   var companies = [appleQ, twitterQ, facebookQ];
   makeDataset(companies);
 });
-
 
 function getQuestions() {
   for (var i=0; i<timeframes.length; i++) {
@@ -71,22 +66,21 @@ function makeDataset(sets) {
         };
      }
   }
-  console.log(matrix);
 
   // initialise stack layout function
   var stack = d3.layout.stack();
   // call on dataset to get baseline value (sum of y values)
-  stack(dataset);
+  stack(matrix);
 
 
   // scales need to be set up
   var xScale = d3.scale.ordinal()
-              .domain(d3.range(dataset[0].length))
+              .domain(d3.range(matrix[0].length))
               .rangeRoundBands([0, h], 0.05);
 
   var yScale = d3.scale.linear()
                 .domain([0,
-                d3.max(dataset, function(d) {
+                d3.max(matrix, function(d) {
                   return d3.max(d, function(d) {
                     return d.y0 + d.y;
                   });
@@ -105,7 +99,7 @@ function makeDataset(sets) {
 
   // group rows of data
   var groups = svg.selectAll('g')
-                .data(dataset)
+                .data(matrix)
                 .enter()
                 .append('g')
                 .style('fill', function(d, i) {
@@ -126,4 +120,20 @@ function makeDataset(sets) {
                 return yScale(d.y);
               })
               .attr('height', xScale.rangeBand());
+
 }
+
+
+complianceButton.addEventListener("click", function(){
+  d3.select("svg").remove();
+  companies = [];
+  companies = [appleA, twitterA, facebookA];
+  makeDataset(companies);
+});
+
+requestButton.addEventListener("click", function(){
+  d3.select("svg").remove();
+  companies = [];
+  companies = [appleQ, twitterQ, facebookQ];
+  makeDataset(companies);
+});
