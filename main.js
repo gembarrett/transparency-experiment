@@ -59,33 +59,16 @@ function makeDataset(set1, set2, set3) {
   var w = 500;
   var h = 400;
 
-  var tempArray1 = [];
-  var tempArray2 = [];
-  var tempArray3 = [];
-
-  for (var i=0; i< set1.length; i++) {
-    tempArray1.push({
-      x: [i],
-      y: set1[i]
-    });
+  var matrix = [ [],[],[] ]; // number of array objects
+  for (var i=0; i<3; i++) { // number of arrays
+     for (var j=0; j<4; j++) { // number of objects per array
+        matrix[i][j] = {
+          x: j,
+          y: set1[j]
+        };
+     }
   }
-  for (var i=0; i< set2.length; i++) {
-    tempArray2.push({
-      x: [i],
-      y: set2[i]
-    });
-  }
-  for (var i=0; i< set3.length; i++) {
-    tempArray3.push({
-      x: [i],
-      y: set3[i]
-    });
-  }
-
-  var dataset2 = [[], [], []];
-  
-  // dataset2 = dataset2.push(tempArray1, tempArray2, tempArray3);
-  console.log(dataset2);
+  console.log(matrix);
 
   dataset = [
     [
