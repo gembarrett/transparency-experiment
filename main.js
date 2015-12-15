@@ -14,6 +14,7 @@ var l14 = [];
 var e14 = [];
 var l13 = [];
 var dataset = [];
+var testDataset = [];
 
 d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/master/sample.json", function(data) {
   timeframes = data["timeframes"];
@@ -24,7 +25,7 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   getQuestions();
   getAnswers();
   // makeHorizontalChart();
-  makeDataset();
+  makeDataset(appleQ, twitterQ, facebookQ);
 });
 
 
@@ -52,15 +53,39 @@ function getAnswers() {
 }
 
 
-function makeDataset(company1, company2, company3) {
+function makeDataset(set1, set2, set3) {
 
   // set width and height
   var w = 500;
   var h = 400;
 
-  for (var i=0; i< 0;) {
+  var tempArray1 = [];
+  var tempArray2 = [];
+  var tempArray3 = [];
 
+  for (var i=0; i< set1.length; i++) {
+    tempArray1.push({
+      x: [i],
+      y: set1[i]
+    });
   }
+  for (var i=0; i< set2.length; i++) {
+    tempArray2.push({
+      x: [i],
+      y: set2[i]
+    });
+  }
+  for (var i=0; i< set3.length; i++) {
+    tempArray3.push({
+      x: [i],
+      y: set3[i]
+    });
+  }
+
+  var dataset2 = [[], [], []];
+  
+  // dataset2 = dataset2.push(tempArray1, tempArray2, tempArray3);
+  console.log(dataset2);
 
   dataset = [
     [
@@ -82,6 +107,7 @@ function makeDataset(company1, company2, company3) {
       { x: 3, y: facebookQ[3] }
     ]
   ];
+  console.log(dataset);
 
   // initialise stack layout function
   var stack = d3.layout.stack();
