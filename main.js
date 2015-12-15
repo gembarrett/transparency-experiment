@@ -42,9 +42,6 @@ function getAnswers() {
     twitterA[i] = twitter["data"][0]["answers"][0][type][i];
     facebookA[i] = facebook["data"][0]["answers"][0][type][i];
   }
-  appleA.reverse();
-  twitterA.reverse();
-  facebookA.reverse();
 }
 
 
