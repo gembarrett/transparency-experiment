@@ -24,8 +24,8 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   twitter = data["companies"][0]["twitter"][0];
   getQuestions();
   getAnswers();
-  // makeHorizontalChart();
-  makeDataset(appleQ, twitterQ, facebookQ);
+  var companies = [appleQ, twitterQ, facebookQ];
+  makeDataset(companies);
 });
 
 
@@ -53,18 +53,21 @@ function getAnswers() {
 }
 
 
-function makeDataset(set1, set2, set3) {
+function makeDataset(sets) {
 
   // set width and height
   var w = 500;
   var h = 400;
 
-  var matrix = [ [],[],[] ]; // number of array objects
+  var matrix = [];
+  for (var i=0; i<sets.length; i++) { // number of array objects
+    matrix.push([]);
+  }
   for (var i=0; i<3; i++) { // number of arrays
      for (var j=0; j<4; j++) { // number of objects per array
         matrix[i][j] = {
           x: j,
-          y: set1[j]
+          y: sets[i][j]
         };
      }
   }
