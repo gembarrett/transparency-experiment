@@ -82,7 +82,7 @@ function makeDataset() {
   var stack = d3.layout.stack();
   // call on dataset to get baseline value (sum of y values)
   stack(dataset);
-  console.log(dataset);
+
 
   // scales need to be set up
   var xScale = d3.scale.ordinal()
