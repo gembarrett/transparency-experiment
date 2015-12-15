@@ -10,6 +10,7 @@ var facebookQ = [];
 var facebookA = [];
 var percentagesOn = false; // when true, replace all compliance totals with percentage data
 var complianceButton = document.getElementById('compliances');
+var compliancePercButton = document.getElementById('compliancePerc');
 var requestButton = document.getElementById('requests');
 
 d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/master/sample.json", function(data) {
@@ -123,6 +124,17 @@ function makeDataset(sets) {
 
 complianceButton.addEventListener("click", function(){
   d3.select("svg").remove();
+  percentagesOn = false;
+  getAnswers();
+  companies = [];
+  companies = [appleA, twitterA, facebookA];
+  makeDataset(companies);
+});
+
+compliancePercButton.addEventListener("click", function(){
+  d3.select("svg").remove();
+  percentagesOn = true;
+  getAnswers();
   companies = [];
   companies = [appleA, twitterA, facebookA];
   makeDataset(companies);
