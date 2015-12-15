@@ -60,11 +60,11 @@ function makeDataset(sets) {
   var h = 400;
 
   var matrix = [];
-  for (var i=0; i<sets.length; i++) { // number of array objects
+  for (var i=0; i<sets.length; i++) { // number of array objects (companies)
     matrix.push([]);
   }
-  for (var i=0; i<3; i++) { // number of arrays
-     for (var j=0; j<4; j++) { // number of objects per array
+  for (var i=0; i<sets.length; i++) { // number of arrays (companies)
+     for (var j=0; j<timeframes.length; j++) { // number of objects per array (timeframes)
         matrix[i][j] = {
           x: j,
           y: sets[i][j]
@@ -72,28 +72,6 @@ function makeDataset(sets) {
      }
   }
   console.log(matrix);
-
-  dataset = [
-    [
-      { x: 0, y: appleQ[0] },
-      { x: 1, y: appleQ[1] },
-      { x: 2, y: appleQ[2] },
-      { x: 3, y: appleQ[3] }
-    ],
-    [
-      { x: 0, y: twitterQ[0] },
-      { x: 1, y: twitterQ[1] },
-      { x: 2, y: twitterQ[2] },
-      { x: 3, y: twitterQ[3] }
-    ],
-    [
-      { x: 0, y: facebookQ[0] },
-      { x: 1, y: facebookQ[1] },
-      { x: 2, y: facebookQ[2] },
-      { x: 3, y: facebookQ[3] }
-    ]
-  ];
-  console.log(dataset);
 
   // initialise stack layout function
   var stack = d3.layout.stack();
