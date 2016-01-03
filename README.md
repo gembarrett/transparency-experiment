@@ -10,8 +10,8 @@
 
 ## Defining the data
 - Total number of requests received is reflective of
-  - total number of requests for data about or content from the account of a user of Apple, Twitter or Facebook
-  - requests are all from US government
+  - total number of requests for data about or content from the account of a user of Apple, Twitter or Facebook-owned services
+  - requests are all from US government (could expand this project into other countries in future)
   - National Security requests (such as National Security Letters and FISA court orders) are not included as they are usually reported separately in bands of 250 or 1000 and are therefore too vague to be of use here
   - most requests are usually part of search warrants, subpoenas and court orders
 - Data related to device requests are not shown
@@ -25,17 +25,20 @@
   - Twitter: whole percentages provided, calculated number to 1 or 2 DP
   - Facebook: percentages with 2 DP provided, calculated number to 4 DP
 - Percentages provided, particularly in the Twitter report, may have been rounded up or down for readability
+- Data missing: how many accounts have ever been targetted?
 
 ## What information could be shared with the US government?
 - name, physical address, other contact information, IP addresses
-- real-time communications (wiretapping your Facebook account)
+- real-time communications (wiretapping your online comms, including VOIP)
 - photos, emails, device backups, documents, calendars, contacts and bookmarks
 
 ## How many accounts in total?
 (monthly active users where possible, otherwise total accounts)
-Facebook: 1.55b + 700m + 400m
-Twitter: 320m + 10m + 200m
-Apple: 800m + 500m
+- Facebook: 1.55b + 700m + 400m = 2.65b
+- Apple: 800m + 500m = 1.3b
+- Twitter: 320m + 10m + 200m = 530m
+
+### Total userbase references
 - Vine: 200 million http://venturebeat.com/2015/08/27/twitter-launches-music-on-vine-to-help-you-discover-and-create-music/
 - Twitter: 320 million https://about.twitter.com/company
 - Periscope: 10 million http://recode.net/2015/08/12/periscope-has-10-million-users-kinda/
