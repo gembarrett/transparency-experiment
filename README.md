@@ -27,3 +27,13 @@
 - name, physical address, other contact information, IP addresses
 - real-time communications (wiretapping your Facebook account)
 - photos, emails, device backups, documents, calendars, contacts and bookmarks
+
+## How many accounts in total?
+- Whatsapp: 700 million http://blogs.wsj.com/digits/2015/01/06/whatsapp-hits-700-million-monthly-users/
+- Periscope: 10 million http://recode.net/2015/08/12/periscope-has-10-million-users-kinda/
+- Facebook: 1.55 billion http://expandedramblings.com/index.php/by-the-numbers-17-amazing-facebook-stats/
+- Messenger: 800 million http://venturebeat.com/2015/04/22/mark-zuckerberg-as-more-people-make-voip-calls-with-messenger-and-whatsapp-call-quality-will-improve/
+- Vine: 200 million http://venturebeat.com/2015/08/27/twitter-launches-music-on-vine-to-help-you-discover-and-create-music/
+- Twitter: 320 million https://about.twitter.com/company
+- iTunes: 800 million http://www.macrumors.com/2015/06/08/apple-music-100m-subscribers-goal/
+- iCloud: 500 million http://mashable.com/2015/05/21/apple-icloud-down-some-users/#kNyOu8RyqSqr
