@@ -10,6 +10,7 @@ var facebookQ = [];
 var facebookA = [];
 var complianceButton = document.getElementById('compliances');
 var requestButton = document.getElementById('requests');
+var matrix = [];
 
 d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/master/sample.json", function(data) {
   timeframes = data["timeframes"];
@@ -40,24 +41,30 @@ function getAnswers() {
   }
 }
 
+function makeMatrix(dataSet) {
+  // empty matrix first
+  matrix = [];
+  for (var i=0; i<dataSet.length; i++) { // number of array objects (companies)
+    matrix.push([]);
+  }
+  for (var i=0; i<dataSet.length; i++) { // number of arrays (companies)
+     for (var j=0; j<timeframes.length; j++) { // number of objects per array (timeframes)
+        matrix[i][j] = {
+          x: j,
+          y: dataSet[i][j]
+        };
+     }
+  }
+}
+
 function makeStackGraph(sets) {
 
   // set width and height
   var w = 500;
   var h = 400;
 
-  var matrix = [];
-  for (var i=0; i<sets.length; i++) { // number of array objects (companies)
-    matrix.push([]);
-  }
-  for (var i=0; i<sets.length; i++) { // number of arrays (companies)
-     for (var j=0; j<timeframes.length; j++) { // number of objects per array (timeframes)
-        matrix[i][j] = {
-          x: j,
-          y: sets[i][j]
-        };
-     }
-  }
+  makeMatrix(sets);
+  console.log(matrix);
 
   // initialise stack layout function
   var stack = d3.layout.stack();
