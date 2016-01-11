@@ -20,7 +20,7 @@ d3.json("https://raw.githubusercontent.com/gembarrett/transparency-experiment/ma
   getQuestions();
   getAnswers();
   var companies = [appleQ, twitterQ, facebookQ];
-  makeDataset(companies);
+  makeStackGraph(companies);
 });
 
 function getQuestions() {
@@ -40,8 +40,7 @@ function getAnswers() {
   }
 }
 
-
-function makeDataset(sets) {
+function makeStackGraph(sets) {
 
   // set width and height
   var w = 500;
@@ -122,12 +121,12 @@ complianceButton.addEventListener("click", function(){
   getAnswers();
   companies = [];
   companies = [appleA, twitterA, facebookA];
-  makeDataset(companies);
+  makeStackGraph(companies);
 });
 
 requestButton.addEventListener("click", function(){
   d3.select("svg").remove();
   companies = [];
   companies = [appleQ, twitterQ, facebookQ];
-  makeDataset(companies);
+  makeStackGraph(companies);
 });
